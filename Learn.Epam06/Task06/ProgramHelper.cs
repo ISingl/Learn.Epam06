@@ -1,21 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task06
 {
-    public class ProgramHelper : IConvertible
+    public class ProgramHelper : ProgramConverter, ICodeChecker
     {
-        public string ConvertToCSharp(string strToConvert)
+        public bool CheckCodeSyntax(string strChecked, string language)
         {
-            return "Converting the string in to CSharp";
-        }
-
-        public string ConvertToVB(string strToConvert)
-        {
-            return "Converting the string in to VB";
+            switch(language)
+            {
+                case "CSharp": 
+                    Console.WriteLine($"Checking to string \"{strChecked}\" for CSharp");
+                    return true;
+                case "VB": 
+                    Console.WriteLine($"Checking to string \"{strChecked}\" for VB");
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 }
