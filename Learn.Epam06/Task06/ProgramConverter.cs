@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Task06
+﻿namespace Task06
 {
     public class ProgramConverter : IConvertible
     {
